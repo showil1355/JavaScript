@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바 스크립트 폼 컨트롤- 로그인 폼</title>
+    <!-- 폼 유효성 검사-->
+    <script>
+        
+    </script>
+</head>
+<body>
+   <!--
+   required : 비밀번호를 입력해주세요란 창이뜬다.
+   autofocus : 창키면 입력창으로 바로간다.
+   pattern : [A-Za-z0-9]{4,10} 뜻은 대소문자숫자 포함 4글자 이상 10글자 이하로 만들어야한다.
+   -->
+    <h2>로그인</h2>
+    <form action="" id="login" name="login">
+        <fieldset>
+            <label for="m_id">아이디 : </label>
+            <input type="text" name="m_id" id="m_id" placeholder="아이디를 입력하세요" autofocus required>  
+            <br>
+            <br>
+            <label for="m_pw">비밀번호 : </label>
+            <input type="password" name="m_pw" id="m_pw" placeholder="비밀번호를 입력하세요" required>
+            <br>
+            <br>
+            <input type="submit" value="로그인">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="취소">
+        </fieldset>
+    </form>
+</body>
+</html>

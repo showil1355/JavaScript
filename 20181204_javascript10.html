@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바 스크립트 폼 컨트롤 - 웹어플리케이션의 예1</title>
+    <script>
+        var flag = true;
+        var totalflag = true;
+        var flag2 = 0;
+        var flag3 = 0;
+        
+        function err(){
+            var f = document.calcurator;
+            f.disp.value="오류";
+            flag = true;
+        }
+        
+        function but(su){
+            var f = document.calcurator;
+            if (totalflag == false && isNaN(su) == false) {
+                c();
+        } else {
+            totalflag = true;
+        }
+            if(flag == true){
+                if(su == 0){
+                    return;
+                }
+                f.disp.value = "";
+                flag = false;
+            }
+            if(isNaN(su)){
+                flag2++;
+            }else {
+                flag2 = 0;
+            }
+            if(flag2 > 1){
+               return;
+            }
+            f.disp.value += su;
+        }
+            
+        function c(){
+            var f = document.calcurator;
+            flag = true;
+            totalflag = true;
+            f.disp.value = "";
+        }
+        
+        function total(){
+            var f = document.calcurator;
+            try {  //정상처리 구문
+                var a = eval(f.disp.value);
+                if(isNaN(a)){
+                    throw err();
+                    return;
+                }
+            } catch(e) { //에러처리 구문
+                err();
+                return;
+            }
+            totalflag = false;
+            var b = (parseInt(a*1000000000000)/1000000000000);
+            f.disp.value = b;
+        }
+    </script>
+    <style>
+        h2 { text-align: center;}
+        input.btn {
+            width: 50px;
+            height: 40px;
+            margin: 5px;
+            font-size: 15pt;
+            border-style: none;
+            background-color: pink;
+            color: #fff;
+        }
+        .clr {
+            width: 112px;
+            height: 40px;
+            margin: 5px;
+            font-size: 15pt;
+            border-style: none;
+            background-color: pink;
+            color: #fff;
+        }
+        #disp {
+            width: 295px;
+            height: 40px;
+            margin: 5px;
+            border: 2px solid bisque;
+            font-size: 22px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h2> 계 산 기</h2>
+    <form action="" name="calcurator" id="cal1">
+        <table border="0" align="center" cellspacing="0" style="border: 2px solid hotpink; background-color: pink">
+            <tr>
+                <td colspan="5">
+                    <input type="text" name="disp" id="disp" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="7" onclick="but(7)" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="8" onclick="but(8)" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="9" onclick="but(9)" class="btn">
+                </td>
+                <td colspan="2">
+                    <input type="button" value="C" onclick="c()" class="clr">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="4" onclick="but(4)" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="5" onclick="but(5)" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="6" onclick="but(6)" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="/" onclick="but('/')" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="%" onclick="but('%')" class="btn">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="1" onclick="but(1)" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="2" onclick="but(2)" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="3" onclick="but(3)" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="*" onclick="but('*')" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="+" onclick="but('+')" class="btn">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="." onclick="but('.')" class="btn">
+                </td>
+                <td>
+                    <input type="button" value="0" onclick="but(0)" class="btn">
+                </td>
+                <td colspan="2">
+                    <input type="button" value="=" onclick="total('=')" class="clr">
+                </td>
+                <td>
+                    <input type="button" value="-" onclick="but('-')" class="btn">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바 스크립트 - 반복문</title>
+    <script>
+        var jum = [90, 100, 85, 70, 80, 95];
+        //jum[0] jum[1]
+        
+        var tot = 0, avg;
+        /*for(초기화; 조건식; 증감식;) {
+            반복할구문
+        }*/
+        for ( i= 0; i < jum.length; i++) {
+            document.write("<br>번호 : " + (i+1)+", 점수 : " + jum[i]);
+            tot += jum[i];
+            console.log(tot);
+        }
+        avg = tot/jum.length;
+        document.write("<br>총점은 : " + tot + "평균은 :" + avg);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
