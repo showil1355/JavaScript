@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 이스케이프 문자</title>
+    <script>
+    //이스케이프 문자 = 출력 제어 문자    
+    alert("참 \n잘했어요 \t 그러나 \b  이제 시작입니다.");
+    var a=prompt("당신은 \' 김기태 나의 사랑 \' 이군요");    
+    var b=confirm("어떠세요? \n 괜찮으세요?");
+
+//    \b : 백스페이스
+//    \t : 탭(tab)
+//    \f : 용지공급
+//    \n : 줄 바꿈
+//    \r : 다음 줄에서 맨 처음으로 제어점이 오는 것
+//    \" : "를 그대로 출력
+//    \' : '를 그대로 출력
+//    \\ : \를 그대로 출력
+    if(b==true){
+        document.write("<strong>확인</strong>을 누르셨습니다.");
+    } else {
+        document.write("<strong>취소</strong>를 누르셨습니다."); 
+    }   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

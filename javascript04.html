@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 - 조건/분기문</title>
+    <script>
+    var kor=90, eng=70, mat=100, tot, avg, pan1, pan2, pan3;
+    var susang, gubun;
+    pan1="탈락"; 
+    tot=kor+eng+mat;
+    avg=tot/3;    
+    if(avg>=70){  //if(조건문){ 조건이 참일때 실행할 문장; } 단순if
+        pan1="합격";
+    }
+    if(kor>=70 && eng>=70 && mat>=70) {//if~else~문  &&:and연산
+        pan2="과락이 아님";
+    } else {
+        pan2="과락";
+    }
+    if(avg>=90){  //if~else if~else~문 : 다단계 if문
+        gubun="수";
+    } else if(avg>=80){
+        gubun="우";
+    } else if(avg>=70){
+        gubun="미";
+    } else if(avg>=60){
+        gubun="양";
+    } else {
+        gubun="집에가";
+    }
+    if(kor>=90 || eng>=90 || mat>=90){  // ||:or연산
+        susang="과목우수자";
+    } else {
+        susang="과목우수없음";
+    }   
+    document.write("<br>국어 : "+kor);
+    document.write("<br>영어 : "+eng);
+    document.write("<br>수학 : "+mat);
+    document.write("<br>총점 : "+tot);
+    document.write("<br>평균 : "+avg);
+    document.write("<br>합격여부 : "+pan1);    
+    document.write("<br>과락여부 : "+pan2);    
+    document.write("<br>수상여부 : "+susang);
+    document.write("<br>학점 : "+gubun);    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
